@@ -1,11 +1,11 @@
-from flask import Flask
+from flask import Flask, jsonify
 
 app = Flask(__name__)   # Flask 객체 생성
 
 def add_file(data):
-    return data + 5
+    return data + 5 
 
-@app.route("/hello")    # 라우트 설정
+@app.route("/hello", methods = ['GET'])    # 라우트 설정
 def hello():
     return f"<h1>Hello</h1>"
 
@@ -23,4 +23,4 @@ def get_first(messageid):
     return "<h1>%d</h1>" % (data)
 
 if __name__ == "__main__":
-    app.run(host='127.0.0.1', port="8080");
+    app.run(host='127.0.0.1', port="8082");
